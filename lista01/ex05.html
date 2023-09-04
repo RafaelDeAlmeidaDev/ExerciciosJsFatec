@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Valor do Jantar</label>
+        <input type="number" name="valorJantar" id="valorJantar">
+
+        <button>Enviar</button>
+    </form>
+    
+    <p class="Result"></p>
+
+    <script>
+        let btnValor = document.querySelector('button');
+
+        btnValor.addEventListener('click', ()=>{
+            let valorJantar = document.querySelector('#valorJantar').value;
+            let taxaGarcom = valorJantar * (10 / 100);
+            let resultado = document.querySelector('.Result');
+
+            resultado.innerHTML = `O valor do jantar é ${valorJantar}, a taxa do garçom é ${taxaGarcom}, o total a ser pago é ${valorJantar + taxaGarcom}`
+
+
+        })
+    </script>
+</body>
+</html>

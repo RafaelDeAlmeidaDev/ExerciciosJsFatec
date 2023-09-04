@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="">Informa qualquer número para saber o dobro dele</label>
+    <input type="number" name="numeroUsuario" id="numeroUsuario">
+
+    <button id="EnviaNumero">Enviar</button>
+
+    <div id="resultado">
+        Digite o Valor:
+    </div>
+
+    <script>
+        /* Faça um programa que leia um número usando input (HTML). Calcule e informe o dobro desse número usando DIV. Utilize função;  */
+
+        let btnEnviaNumero = document.querySelector('#EnviaNumero');
+
+        btnEnviaNumero.addEventListener('click', ()=>{
+            let numeroUsuario = Number(document.querySelector('#numeroUsuario').value);
+            let imprimirResultado = document.querySelector('#resultado');
+
+            imprimirResultado.innerHTML = `O dobro de ${numeroUsuario} é ${numeroUsuario * 2}`;
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: blue;
+            padding: 1em;
+            color: white;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <form >
+        <fieldset>
+            <p>
+                <label for="nomeFilme">Título do filme</label>
+                <input type="text" name="nomeFilme" id="nomeFilme" placeholder="Digite o nome do filme">
+                Digite o nome do filme
+            </p>
+
+            <p>
+                <label for="duracaomtextinFilm">Duração (min.)</label>
+                <input type="number" id="duracaomtextinFilm" placeholder="108">
+                Digite o tempo em minutos
+            </p>
+
+            <button type="submit" id="btnConverterMinutosEmHoras">Converter em Horas e Minutos</button>
+        </fieldset>
+    </form>
+
+    <p id="resp">
+        O tempo é:
+    </p>
+
+    <script>
+        /*1) Elaborar um programa para uma Vídeo Locadora, que leia o título e a duração de um filme em minutos. Exiba o título do filme e converta a duração para horas e minutos, conforme a figura em anexo. */
+
+        let btnConverteTempo = document.querySelector('#btnConverterMinutosEmHoras');
+
+        btnConverteTempo.addEventListener('click', ()=>{
+            let nomeFilme = document.querySelector('#nomeFilme').value;
+            let tempoEmMinutos = Number(document.querySelector('#duracaomtextinFilm').value);
+            let TempoHoras = parseInt(tempoEmMinutos / 60);
+            let minutosRestantes = tempoEmMinutos % 60;
+
+
+            document.querySelector('#resp').innerHTML = `O filme ${nomeFilme} dura ${TempoHoras} horas e ${minutosRestantes}`;
+
+            /* Falta colocar separado tempo em horas e minutos na resposta */
+        })
+
+    </script>
+</body>
+</html>

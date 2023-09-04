@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FarmáciaJS</h1>
+
+    <label for="">Nome Medicamento</label>
+    <input type="text" name="nomeMedicamento" id="nomeMedicamento">
+
+    <label for="">Preço do medicamento</label>
+    <input type="number" name="precoProduto" id="precoProduto">
+
+    <button id="btnValor">Mostrar Valor Promoção</button>
+
+    <p id="exibirValor">
+
+    </p>
+
+    <script>
+        /* Uma farmácia está com uma promoção-Na compra de duas unidades de um mesmo medicamento, o cliente recebe como desconto os centavos do valor total. Elaborar um programa que leia a descrição e preço de um medicamento. Informar o valor do produto na promoção. A figura apresenta a tela com um exemplo de dados de entrada e saída do programa. */
+        let btnValor = document.querySelector('#btnValor');
+
+        btnValor.addEventListener('click', ()=>{
+            let nomeMedicamento = document.querySelector('#nomeMedicamento').value;
+            let valorUnitario = document.querySelector('#precoProduto').value;
+
+            let valorPromocao = Math.floor(valorUnitario * 2);
+
+            document.querySelector('#exibirValor').innerHTML = `Promoção de ${nomeMedicamento}<br>
+
+            Leve 2 por ${valorPromocao.toFixed(2)}
+            `;
+
+
+        })
+
+    </script>
+</body>
+</html>

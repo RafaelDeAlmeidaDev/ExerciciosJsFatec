@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Faça um programa que leia um número usando prompt(). Calcule e informe se esse número é par ou ímpar usando console.log();  */
+let numeroUsuario = parseInt(prompt("Digite um número para saber se é par ou impar"));
+
+if (numeroUsuario % 2 === 0) {
+    console.log(`O valor ${numeroUsuario} é par`);
+}else if (numeroUsuario % 2 === 1) {
+    console.log(`O valor ${numeroUsuario} é impar`)
+} else {
+    console.log("Opção inválida, era esperado um número")
+}
+    </script>
+</body>
+</html>

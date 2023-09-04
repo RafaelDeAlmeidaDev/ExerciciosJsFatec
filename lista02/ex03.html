@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table, tr, td{
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Peso</th>
+                <th>Valor do KG em R$</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Até  500g</td>
+                <td>40.00</td>
+            </tr>
+            <tr>
+                <td>Até  1000g</td>
+                <td>35.00</td>
+            </tr>
+            <tr>
+                <td>Acima de 1000g</td>
+                <td>30.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <label for="pesoEmGramas">Quantidade em gramas</label>
+    <input type="number" name="pesoEmGramas" id="pesoEmGramas">
+
+    <button id="btnValorDaComida">Valor a pagar</button>
+
+    <p id="valorDoPrato"></p>
+
+    <script>
+        let btnValorAPagar = document.querySelector('#btnValorDaComida');
+
+        btnValorAPagar.addEventListener('click', ()=>{
+            let pesoDoPrato = parseInt(document.querySelector('#pesoEmGramas').value);
+
+            if(pesoDoPrato > 0 &&  pesoDoPrato <= 500){
+                document.querySelector('#valorDoPrato').innerHTML = "O valor a pagar é de R$: 40,00";
+            }else if(pesoDoPrato > 500  && pesoDoPrato <=1000){
+                document.querySelector('#valorDoPrato').innerHTML = "O valor a pagar é de R$: 35,00";
+            }else if (pesoDoPrato > 1000) {
+                document.querySelector('#valorDoPrato').innerHTML = "O valor a pagar é de R$: 30,00";
+            } else {
+                document.querySelector('#valorDoPrato').innerHTML = "Digitou algo errado, informe o valor em gramas e digite somente números";
+            }
+        })
+    </script>
+</body>
+</html>

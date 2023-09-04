@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>LanHouse JS</h1>
+
+    <label for="minutosAPagar">tempo de uso</label>
+    <input type="number" name="minutosAPagar" id="minutosAPagar">
+
+    <button id="calcularValor">Valor a pagar</button>
+
+    <p id="exibirValor"></p>
+
+    <script>
+        /* Elaborar um programa para uma lan house de um aeroporto –O programa deve ler o valor de cada 15 minutos de uso de um computador e o tempo de uso por um cliente em minutos. Informe o valor a ser pago pelo cliente, sabendo que as frações extras de 15 minutos devem ser cobradas de forma integral. A figura exibe um exemplo com dados do programa. */
+        let btnValor = document.querySelector('#calcularValor');
+
+        btnValor.addEventListener('click', ()=>{
+            let minutosDeUso = document.querySelector('#minutosAPagar').value;
+            let valorAPagar = parseInt((minutosDeUso / 15) * 3);
+
+            document.querySelector('#exibirValor').innerHTML = `Valor por 15 minutos de uso é de R$: 3,00 <br> Tempo de uso do cliente: ${minutosDeUso}<br>
+            Valor a pagar ${valorAPagar}`;
+            
+        })
+
+
+    </script>
+</body>
+</html>

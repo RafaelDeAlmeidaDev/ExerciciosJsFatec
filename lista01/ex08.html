@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="">
+    <label for="valorTotal">Valor a ser pago</label>
+    <input type="number" name="valorTotal" id="valorTotal">
+    <label for="quantidadePessoas">Quantidade de pessoas que irão pagar</label>
+    <input type="number" name="quantidadePessoas" id="quantidadePessoas">
+
+    <button type="submit" id="DividiBotao">Cálcular</button>
+</form>
+    <!-- Elaborar um programa para uma pizzaria, o qual leia o valor total de uma conta e quantos clientes vão pagá-la. Calcule e informe o valor a ser pago por cliente.  -->
+    <script>
+        let botaoCalculo = document.querySelector('#DividiBotao');
+        
+        botaoCalculo.addEventListener('click', ()=>{
+            let totalValorPizza = parseFloat(document.querySelector('#valorTotal').value);
+            let ValorPorPessoas = parseFloat(document.querySelector('#quantidadePessoas').value);
+            
+            document.write(`O total da pizza é ${totalValorPizza}, será dividido entre ${ValorPorPessoas}, o valor que cada irá pagar é de ${totalValorPizza / ValorPorPessoas}`);
+        })
+
+    </script>
+</body>
+</html>

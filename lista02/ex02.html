@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: blue;
+            padding: 1em;
+            color: white;
+            font-weight: 500;
+        }
+
+        .InformaçẽsCamposInput{
+            font-size: 1.3em;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <p class="InformaçẽsCamposInput">
+                <label for="">Veículos</label>
+                <input type="text" id="modeloVeiculo" placeholder="Chornos 2019">
+                Digite o nome do veículo
+            </p>
+
+            <p class="InformaçẽsCamposInput">
+                <label for="">Preço (R$)</label>
+                <input type="number" id="valorVeiculo" placeholder="30000">
+                Digite o valor em R$.
+            </p>
+
+            <button id="btnPromocaoVeiculo">Ver promoção</button>
+
+        </fieldset>
+    </form>
+
+    <div id="exibirValor">
+
+    </div>
+
+    <script>
+        /* Elaborar um programa para uma revenda de veículos. O programa deve ler modelo e preço do veículo. Apresentar como resposta o valor da entrada (50%) e saldo em 12x. A figura apresenta a execução do programa. */
+        let btnValorPromocao = document.querySelector('#btnPromocaoVeiculo');
+
+        btnValorPromocao.addEventListener('click', ()=>{
+            let modeloVeiculo = document.querySelector('#modeloVeiculo').value;
+            let valorVeiculo = document.querySelector('#valorVeiculo').value;
+            let valorEntrada = valorVeiculo - (valorVeiculo * (50/100));
+            let valorParcela = (valorVeiculo - valorEntrada) / 12;
+            
+            document.querySelector('#exibirValor').innerHTML = `Promoção: ${modeloVeiculo}<br>
+            Entrada de RS${valorEntrada} + 12X de R$ ${valorParcela}
+            `;
+        })
+
+
+
+
+    </script>
+</body>
+</html>

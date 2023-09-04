@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="numeroDigitado" id="numeroDigitado">
+    <button id="btnEnviar">Enviar</button>
+
+    <div id="resposta"></div>
+    <script>
+        let btnCalculo = document.querySelector('#btnEnviar');
+
+        btnCalculo.addEventListener('click', ()=>{
+            let numeroUsuario = document.querySelector('#numeroDigitado').value;
+            let resultado = document.querySelector('#resposta');
+
+            resultado.innerHTML = `A raiz quadrada de ${numeroUsuario} é igual ${Math.sqrt(numeroUsuario)}`;
+
+        })
+    </script>
+</body>
+</html>

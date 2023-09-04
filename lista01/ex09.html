@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Elaborar um programa para uma loja, o qual leia o preço de um produto e informe as opções de pagamento da loja. Calcule e informe o valor para pagamento à vista com 10% de desconto e o valor em 3x.  -->
+
+    <form action="">
+        <label for="valorTotal">Valor Do produto</label>
+        <input type="number" name="valorTotal" id="valorTotal"><br>
+
+        <label for="tipoPagamento">Digite 1 para pagamento à vista e com desconto ou 2 para pagar em até 3x</label><br>
+        <input type="number" name="tipoPagamento" id="tipoPagamento" min="1" max="2"><br>
+        
+        <button type="" id="botaoPagamento">Enviar</button>
+    </form>
+
+    <div id="resposta">O valor é de:</div>
+
+    <script>
+        let botaoForm = document.querySelector('#botaoPagamento');
+
+        botaoForm.addEventListener('click', ()=>{
+            let valorTotalProduto = Number(document.querySelector('#valorTotal').value);
+            let tipoPagamento = Number(document.querySelector('#tipoPagamento').value);
+            let resultado = document.querySelector('#resposta')
+
+            if(tipoPagamento == 1){
+                resultado.innerHTML = `O valor é de ${valorTotalProduto - (valorTotalProduto * (10 / 100))}`;
+            }else if(tipoPagamento == 2){
+                resultado.innerHTML = `O valor a ser pago é de ${valorTotalProduto} em até 3x`;
+            }else{
+                resultado.innerHTML = "Opção de pagamento inválida";
+            }
+        })
+
+        /* logo após o resultado é recarregando a página */
+
+
+    </script>
+</body>
+</html>
